@@ -1,0 +1,43 @@
+version: 3
+domain: fluid_dynamics
+created_by: Assistant
+seed_examples:
+  - context: |
+      The paper "l1-based sparsification of energy interactions in unsteady lid-driven cavity flow" explores how data-driven techniques, specifically l1-regularized regression, can prune irrelevant triadic interactions in Galerkin models of two-dimensional turbulent flows. The goal is to produce sparse, interpretable models that maintain dynamic accuracy while reducing computational cost. The work focuses on chaotic lid-driven cavity flow at a Reynolds number of 20,000.
+    questions_and_answers:
+      - question: |
+          What method is used to sparsify energy interactions in Galerkin models?
+        answer: |
+          The method used is l1-regularized regression, specifically LASSO, to identify and prune weak triadic interactions.
+      - question: |
+          What flow configuration is studied in the paper?
+        answer: |
+          The study focuses on two-dimensional unsteady lid-driven cavity flow at a Reynolds number of 20,000.
+      - question: |
+          What is the primary goal of sparsifying Galerkin models?
+        answer: |
+          The goal is to produce sparse, interpretable models that accurately capture the flow dynamics with reduced computational cost.
+
+  - context: |
+      The paper concludes that a significant portion of triadic interactions (up to 80%) can be pruned without major accuracy loss in chaotic flow models. Despite aggressive sparsification, models retain stability, conserve energy approximately, and reproduce spatiotemporal flow structures. The study also finds that the choice of modal basis (POD vs DFT) affects the sparsity and structure of identified interactions.
+    questions_and_answers:
+      - question: |
+          How much of the triadic interactions can be removed without significant accuracy loss?
+        answer: |
+          Up to 80% of triadic interactions can be pruned without major loss in model accuracy.
+      - question: |
+          Does the sparsified model maintain stability and energy conservation?
+        answer: |
+          Yes, sparsified models exhibit excellent long-term stability and approximate energy conservation.
+      - question: |
+          How does the choice of modal basis affect sparsity?
+        answer: |
+          The choice between POD and DFT modes impacts both the sparsity and structure of the dominant interactions identified.
+
+document_outline: |
+  Details and methodology about sparsifying energy interactions in two-dimensional turbulent flows.
+document:
+  repo: https://github.com/RiccardoRubini93/l1-sparsity.git
+  commit: 84b109b001a607545d51fbb4d8e83ec8c5350078
+  patterns:
+    - data.md
